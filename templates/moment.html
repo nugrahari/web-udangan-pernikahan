@@ -1,0 +1,87 @@
+{% load static %}
+<div id="Moment" class="tabcontent">
+
+    <div class="corner1">
+        <img src="{% static 'assets/img/left.png' %}" alt="" width="100%">
+    </div>
+
+    <div class="corner2">
+        <img src="{% static 'assets/img/right.png' %}" alt="" width="100%">
+    </div>
+
+    <div class="corner3">
+        <img src="" alt="" width="100%">
+    </div>
+
+    <div class="corner4">
+        <img src="{% static 'assets/img/left-bottom.png' %}" alt="" width="100%">
+    </div>
+
+    <div class="corner5">
+        <img src="https://nikahankami.com/assets/de12oraset5.png" alt="" width="100%">
+    </div>
+
+    <div class="corner6">
+        <img src="https://nikahankami.com/assets/de12oraset6.png" alt="" width="100%">
+    </div>
+
+
+
+
+    <div id="homewd" class="contentwd">
+
+        <div class="ornamentwdtop" style="width: 100%; margin: 0px; text-align: center;">
+            <img src="https://nikahankami.com/assets/de12vintopwd.png" alt="" style="display: inline-block;" width="100%">
+        </div>
+        <div class="content4pad">
+                <br>
+                <h3 style="font-family: Angelface; font-size: 35px; color: #404040"> Gallery </h3>
+                <p class="explainbride"> Momen Bahagia  Wilmy-Hari</p>
+
+                <!-- !PAGE CONTENT! -->
+
+                    
+                    
+
+                            {% for foto in galeries %}
+                            <div class="gallery" >
+                                <a target="_blank" href="media/{{foto.gambar}}">
+                                  <!-- <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"> -->
+                                  <img src="media/{{foto.gambar}}" alt="{{foto.title}}" width="600" height="400">            
+                                </a>
+                                <div>
+                                    <p>{{foto.title}}</p>
+                                </div>
+                              </div>
+                            
+                            {% endfor %}
+
+                            <!-- <img src="https://nikahankami.com/id/storage/galeri/1606278718gal01.jpg" style="width:100%" onclick="onClick(this)"
+                            alt="Desi-Indra"><br>
+
+            
+                            <img src="https://nikahankami.com/id/storage/galeri/1606278718gal03.jpg" style="width:100%" onclick="onClick(this)"
+                            alt="Desi-Indra"><br>
+
+                            <img src="https://nikahankami.com/id/storage/galeri/1606278718gal05.jpg" style="width:100%" onclick="onClick(this)"
+                            alt="Desi-Indra"><br>
+
+                            <img src="https://nikahankami.com/id/storage/galeri/1606278718gal07.jpg" style="width:100%" onclick="onClick(this)"
+                            alt="Desi-Indra"><br> -->
+
+            
+
+
+        </div>
+        <div>
+            <div class="ornamentwdbtm" style="width: 100%; margin: 0px; text-align: center;">
+            <img src="https://nikahankami.com/assets/de12vinbtmwd.png" alt="" style="display: inline-block;" width="100%">
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+
+    </div>
+</div>

@@ -1,0 +1,127 @@
+{% load static %}
+{% load embed_video_tags %}
+
+<div id="Quotewd" class="tabcontent">
+    <!-- <h3>News</h3>
+    <p>Some news this fine day!</p> -->
+
+    <div class="corner1">
+        <img src="{% static 'assets/img/left.png' %}" alt="" width="100%">
+    </div>
+
+    <div class="corner2">
+        <img src="{% static 'assets/img/right.png' %}" alt="" width="100%">
+    </div>
+
+    <div class="corner3">
+        <img src="" alt="" width="100%">
+    </div>
+
+    <div class="corner4">
+        <img src="{% static 'assets/img/left-bottom.png' %}" alt="" width="100%">
+    </div>
+
+    <div class="corner5">
+        <img src="{% static 'assets/img/header.png' %}" alt="" width="100%">
+    </div>
+
+    <div class="corner6">
+        <!-- <img src="https://nikahankami.com/assets/de12oraset6.png" alt="" width="100%"> -->
+    </div>
+
+    <div id="bridewd" class="contentwd">
+
+        <div class="ornamentwdtop" style="width: 100%; margin: 0px; text-align: center;">
+            <img src="https://nikahankami.com/assets/de12vintopwd.png" alt="" style="display: inline-block;" width="100%">
+        </div>
+
+        <div style="clear:both"></div>
+        <!-- !PAGE CONTENT! -->
+        <div class="w3-main w3-content" style="max-width:1600px;margin-top:20px">
+            
+            <p class="explainbride"></p>
+            <br>
+            <p class="explainbride"> Segala Puji Bagi Allah SWT</p>
+            <p class="explainbride">--</p>
+            <p class="explainbride">Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir. </p>
+            <p class="explainbride"><b>QS. Ar-Rum: 21 </b></p>
+            <p class="explainbride">--</p>
+
+            <div class="">
+                <p class="explainbride">Ucapan Selamat &amp; Doa untuk<br>   Hari Nugraha & Alya Wilmi Akbar  <br> Pernikahan dengan uang panai 150 juta rupiah dan mahar 20 gram emas </p>
+                <p class="explainbride"> <b>Live Stream</b></p>
+            </div>
+            
+            {% video video.video  %}
+
+            <div class="wishspace">
+                <div class="wishcontainer">
+                  
+                  <form action="/{{tamu_undangan.nama}}" method="post">
+
+                    {% csrf_token %}
+                    <label for="nama">Nama </label>
+                    <input type="text" id="nama" name="nama" placeholder="Nama.. " value="{{tamu_undangan.nama}}" readonly>
+                    <label for="ucap">Ucapan </label>
+                    <textarea id="ucap" name="ucap" placeholder="Ucapan Doa &amp; Harapan " style="height:100px" required></textarea>
+                    
+                    <label for="sumbang">Sumbangan Online </label>
+                    <input type="text" id="sumbang" name="sumbang" placeholder="Opsional...">
+
+
+                    <input type="submit" name="submit" value="Kirim ">
+                    
+                  </form>
+                </div>
+
+                <br>
+
+                <div class="wishdisplay">
+                    <p>Ucapan Sebelumnya :</p>
+                    {% for pesan in pesans %}
+
+                    <div class="wishdisplayname">
+                        {{ pesan.nama }}
+                    </div>
+
+                    <div class="" style="padding-bottom: 10px">
+                        {{ pesan.ucapan }}
+                    </div>                  
+                    
+					{% endfor %}
+                    
+
+                        
+
+                  
+                       
+
+                  
+                </div>
+
+
+            </div>
+
+            <div class="">
+                <p class="explainbride"><b>Mbecek/Sumbang/Angpau Online</b></p>
+                <p class="explainbride">BCA : 8020566168, Hari Nugraha</p>
+                <p class="explainbride">BTN : 0000501610084246, Hari Nugraha</p>
+                <p class="explainbride">BRI : 301901024471530, Hari Nugraha</p>
+            </div>
+        </div>
+    </div>
+        
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+
+</div>

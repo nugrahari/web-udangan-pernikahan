@@ -1,0 +1,693 @@
+<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap'>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="https://nikahankami.com/atemplate/jquery-1.8.2.js"></script>
+
+<style type="text/css">
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        filter:alpha(opacity=70);
+        -moz-opacity:0.7;
+        -khtml-opacity: 0.7;
+        opacity: 0.7;
+        z-index: 100;
+        display: none;
+    }
+    .cnt223 a{
+        text-decoration: none;
+    }
+    .popup{
+        width: 100%;
+        margin: 0 auto;
+        display: none;
+        position: fixed;
+        z-index: 101;
+    }
+    .cnt223{
+       /* min-width: 600px;*/
+        width: 100%;
+        min-height: 150px;
+        margin: 100px auto;
+        background-color: #b068f3;
+        background-image: linear-gradient(#bb68f3, #f7f5f4);
+        background-position: center;
+        position: relative;
+        z-index: 103;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #000;
+    }
+    .cnt223 p{
+        clear: both;
+        color: #555555;
+        text-align: center;
+    }
+    .cnt223 p a{
+        background-color: #6c5e6e;
+        text-align: center;
+        padding: 20px 30px;
+        margin: auto;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    .cnt223 p img {
+        text-align: center;
+        margin: auto;
+    }
+    .cnt223 .x{
+        float: right;
+        height: 35px;
+        left: 22px;
+        position: relative;
+        top: -25px;
+        width: 34px;
+    }
+    .cnt223 .x:hover{
+        cursor: pointer;
+    }
+
+    .imgopenint img {
+        width: 100px;
+    }
+
+    @media    screen and (min-width: 600px) {
+    .imgopenint img {
+        width: 100px;
+    }
+}
+
+</style>
+<style>
+* {
+    box-sizing: border-box
+}
+
+.w3-half img{
+    margin-bottom: -6px;
+    cursor: pointer
+    z-index: -99;
+}
+
+.w3-half img:hover{opacity: 0.6; transition: 0.3s}
+
+
+/* Set height of body and the document to 100% */
+body,
+html {
+    margin: 0;
+    font-family: Arial;
+}
+
+@font-face{
+src: url('https://nikahankami.com/atemplate/Litine.ttf');
+font-family: litine;
+}
+
+
+@font-face{
+    src: url('https://nikahankami.com/atemplate/Angelface.otf');
+    font-family: Angelface;
+    }
+
+@font-face{
+    src: url('https://nikahankami.com/atemplate/dosis.ttf');
+    font-family: dosis;
+}
+
+@font-face{
+    src: url('https://nikahankami.com/atemplate/Aldine.ttf');
+    font-family: aldine;
+}
+
+</style>
+      <style media="screen">
+.iconbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* background-color: #bababa; */
+  background-color: #172740;
+  overflow: auto;
+  z-index: 999999;
+}
+
+.iconbar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding-top: 5px;
+  color: #6c5e6e;
+  font-size: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Style tab links */
+/* .tablink {
+  background-image: url("https://nikahankami.com/assets/bgatexture.jpg");
+  background-position: center;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  width: 20%;
+
+} */
+</style>
+
+
+
+<style>
+
+
+/* Style tab links */
+.tablink {
+    background-color: #c6a9e0;
+    /*background-image: url(images/bgpaper.jpg);*/
+    background-position: center;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+    width: 20%;
+
+}
+
+.tablink:hover {
+    opacity: 0.9;
+    /*background-color: #777;*/
+}
+
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: black;
+    text-align: center;
+    display: none;
+    /* padding: 30px 20px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    position: relative;
+}
+
+
+.corner1{
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    opacity: 0;
+}
+
+.corner2{
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+}
+
+.corner3{
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    opacity: 0;
+}
+
+.corner4{
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.corner5{
+    width: 70%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9;
+    /*opacity: 0;*/
+}
+
+.corner6{
+    width: 70%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    /*opacity: 0;*/
+}
+
+.contentwd {
+    position: relative;
+    z-index: 99;
+}
+
+#Cover {
+    background-color: #b068f3;
+    background-image: linear-gradient(#b068f3, #f7f5f4);
+    /*background-image: url(images/bgpaper.jpg);
+    background-position: center;*/
+}
+
+#Couple {
+    background-color: #b068f3;
+    /*background-image: url(images/bgpaper.jpg);
+    background-position: center;*/
+}
+
+#Eventwd {
+    background-color: #b068f3;
+    /*background-image: url(images/bgpaper.jpg);
+    background-position: center;*/
+}
+
+#Moment {
+    background-color: #b068f3;
+    /*background-image: url(images/bgpaper.jpg);
+    background-position: center;*/
+}
+
+#Quotewd {
+    background-color: #b068f3;
+    /*background-image: url(images/bgpaper.jpg);
+    background-position: center;*/
+}
+
+.explainbride {
+    font-family: dosis;
+    color: #404040;
+}
+
+.bridefont {
+    font-family: litine;
+    font-size: 25px;
+    color: #625564;
+}
+
+.bridefont2 {
+    font-family: litine;
+    font-size: 25px;
+    color: #625564;
+}
+
+.fontfront {
+    font-family: aldine;
+    font-size: 85px;
+    color: white;
+    text-shadow: 2px 2px 2px grey;
+}
+
+.fontfront2 {
+    font-family: aldine;
+    font-size: 85px;
+    color: white;
+    text-shadow: 2px 2px 2px grey;
+}
+
+.fontfront3 {
+    font-family: aldine;
+    font-size: 35px;
+    color: white;
+    text-shadow: 2px 2px 2px grey;
+}
+
+
+/*** music box ***/
+.music-box {
+position: fixed;
+width: 300px;
+height: 160px;
+z-index: 120;
+bottom: 30px;
+right: 30px;
+}
+
+@media (max-width: 991px) {
+.music-box {
+    width: 50px;
+    height: 150px;
+    right: auto;
+    right:10px;
+    top:10px;
+}
+}
+
+.music-box .music-holder {
+width: 100%;
+height: 100%;
+position: absolute;
+right: 0;
+top: -30px;
+visibility: hidden;
+opacity: 0;
+-webkit-transition: all 0.5s ease-out;
+-o-transition: all 0.5s ease-out;
+transition: all 0.5s ease-out;
+}
+
+.music-box .music-holder iframe {
+width: 100%;
+height: 100%;
+}
+
+.music-box button {
+background: rgba(248, 246, 246, 0.85);
+width: 50px;
+line-height: 37px;
+font-size: 18px;
+font-size: 1rem;
+color: #68192b;
+border: 1px solid #e6e6e6;
+outline: 0;
+padding: 0;
+margin: 0;
+position: absolute;
+right: 0;
+bottom: 0;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+-o-border-radius: 50%;
+-ms-border-radius: 50%;
+border-radius: 50%;
+}
+
+.music-box button i{
+    font-size: 20px;
+}
+
+@media (max-width: 991px) {
+
+    .music-box button {
+        right: 0;
+        left: auto;
+    }
+}
+
+.music-box .toggle-music-box {
+top: -50px;
+visibility: visible;
+opacity: 1;
+
+}
+
+
+.music {
+padding: 0;
+background: none !important;
+border: none !important;
+position: relative;
+top: 100px;
+left: 180px;
+}
+
+.music:focus {
+outline: none;
+}
+
+.fa-stack{
+    right:12px;
+    top: -65px;
+    width: 0;
+    height: 0;
+}
+
+.containerngunduhwd {
+    margin: auto;
+    text-align: center;
+    font-family: dosis;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.containerngunduhwd table {
+    margin: auto;
+    text-align: left;
+}
+
+
+.containerijabwd {
+    margin-left: 5%;
+    text-align: left;
+    font-family: dosis;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.containerweddingwd {
+    margin-right: 5%;
+    text-align: right;
+    font-family: dosis;
+    font-size: 14px;
+    line-height: 1;
+}
+
+
+/* jam */
+h1{
+font-family: dosis;
+color: #396;
+font-weight: 100;
+font-size: 40px;
+margin: 40px 0px 20px;
+}
+#clockdiv{
+    font-family: dosis;
+    color: grey;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+#clockdiv > div{
+    padding: 1px;
+    border-radius: 3px;
+    /* background: #00BF96;  */
+    display: inline-block;
+}
+#clockdiv div > span{
+    padding: 1px;
+    border-radius: 3px;
+    /* background: #00816A;  */
+    display: inline-block;
+}
+
+#day {
+    font-size: 50px;
+    color: red;
+}
+
+.smalltext{
+    padding-top: 2px;
+    font-size: 24px;
+    font-family: Angelface;
+}
+
+.ornamentwdtop {
+    position: relative;
+    margin: 0 auto;
+}
+
+.ornamentbg{
+    position: absolute;
+    z-index: -4;
+    top: 50px;
+    width: 30%;
+    opacity: 1;
+    opacity: 0;
+}
+
+.ornamentbg img {
+    width: 40%;
+}
+
+.ornamentwdtop img {
+    width: 60%;
+}
+
+.ornamentwdbtm img {
+    width: 40%;
+}
+
+.timeline h2 {
+    color: #404040;
+}
+
+@media    screen and (min-width: 600px) {
+    .cardevent {
+    margin-left: 20%;
+    margin-right: 20%;
+    }
+
+    .borderpair {
+        width: 60%;
+    }
+}
+
+
+@media  screen and (max-width: 600px) {
+    .corner1 {
+        width: 150px;
+    }
+
+    .corner2 {
+        width: 150px;
+    }
+
+    .corner3 {
+        width: 150px;
+    }
+
+    .corner4 {
+        width: 150px;
+    }
+
+    .corner5 {
+        width: 100%;
+    }
+
+    .corner6 {
+        width: 100%;
+    }
+
+    .ornamentbg img {
+        width: 100%;
+    }
+
+    .ornamentwdtop img {
+        width: 100%;
+    }
+
+    .ornamentwdbtm img {
+        width: 100%;
+    }
+
+    .containerijabwd {
+        margin-left: 10%;
+    }
+
+    .containerweddingwd {
+        margin-right: 10%;
+    }
+
+    .borderpair {
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+/* comment section */
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #6c5e6e;
+  width: 100%;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #625564;
+}
+
+.wishcontainer {
+    text-align: left;
+    font-family: dosis;
+}
+
+.wishspace {
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  color: #404040;
+}
+
+.wishdisplay {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: dosis;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.wishdisplayname {
+    font-weight: bold;
+}
+
+/* width */
+.wishdisplay::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Handle */
+.wishdisplay::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.wishdisplay::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+</style>
+
+<script type='text/javascript'>
+$(function(){
+var overlay = $('<div id="overlay"></div>');
+overlay.show();
+overlay.appendTo(document.body);
+$('.popup').show();
+$('.close').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+
+
+$('.x').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+});
+</script>
