@@ -1,7 +1,9 @@
+{% load static %}
+
 <div class='popup'>
     <div class='cnt223'>
-        <p><img src="https://nikahankami.com/assets/de12vintopwd.png" width="60%" style="text-align: center"></p>
-        <p class="imgopenint"><img class='close' src="https://nikahankami.com/id/storage/foto_pop_up/1606278718openerimg.png" style="text-align: center"></p>
+        <p><img src="{% static 'assets/img/de12vintopwd.png' %}" width="60%" style="text-align: center"></p>
+        <p class="imgopenint"><img class='close' src="{% static 'assets/img/hari-wilmi.png' %}" style="text-align: center"></p>
 
         <p style="text-align: center; line-height: normal;">{{status}} <br> Kepada Yth.<br><span style="font-size:12px">Bapak/Ibu/Saudara/i</span>
 
@@ -15,7 +17,7 @@
 
     <div style="clear: both;"></div>
 
-    <p><img src="https://nikahankami.com/assets/de12vintopwd.png" width="60%" style="transform: rotate(180deg); text-align: center"></p>
+    <p><img src="{% static 'assets/img/de12vinbottoml.png' %}" width="60%" style="text-align: center"></p>
     </div>
 
 </div>

@@ -1,12 +1,13 @@
+{% load static %}
 <div class="iconbar">
         
 
 
-    <a class="tablink" onclick="openPage('Cover', this, '#b068f3')" id="defaultOpen"><img src="https://nikahankami.com/assets/de12tab1cover.png" width="35"><br><span>Home</span></a>
-    <a class="tablink" onclick="openPage('Couple', this, '#b068f3')"><img src="https://nikahankami.com/assets/de12tab2couple.png" width="35"><br><span>Couple</span></a>
-    <a class="tablink" onclick="openPage('Eventwd', this, '#b068f3')"><img src="https://nikahankami.com/assets/de12tab3event.png" width="35"><br><span>Event</span></a>
-      <a class="tablink" onclick="openPage('Moment', this, '#b068f3')"><img src="https://nikahankami.com/assets/de12tab4moment.png" width="35"><br><span>Moment</span></a>
-              <a class="tablink" onclick="openPage('Quotewd', this, '#b068f3')"><img src="https://nikahankami.com/assets/de12tab5story.png" width="35"><br><span>Quote+Wish</span></a>
+    <a class="tablink" onclick="openPage('Cover', this, '#b068f3')" id="defaultOpen"><img src="{% static 'assets/img/de12tab1cover.png' %}" width="35"><br><span>Home</span></a>
+    <a class="tablink" onclick="openPage('Couple', this, '#b068f3')"><img src="{% static 'assets/img/de12tab2couple.png' %}" width="35"><br><span>Couple</span></a>
+    <a class="tablink" onclick="openPage('Eventwd', this, '#b068f3')"><img src="{% static 'assets/img/de12tab3event.png' %}" width="35"><br><span>Event</span></a>
+      <a class="tablink" onclick="openPage('Moment', this, '#b068f3')"><img src="{% static 'assets/img/de12tab4moment.png' %}" width="35"><br><span>Moment</span></a>
+              <a class="tablink" onclick="openPage('Quotewd', this, '#b068f3')"><img src="{% static 'assets/img/de12tab5story.png' %}" width="35"><br><span>Quote+Wish</span></a>
 
 
 </div>
