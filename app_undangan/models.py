@@ -41,7 +41,7 @@ class Galery(models.Model):
 		return self.title
 
 class TamuUndangan(models.Model):
-	nama = models.CharField(max_length=200, null=True, blank=True)
+	nama = models.CharField(max_length=200, null=True, blank=True, unique=True)
 	keterangan = models.CharField(max_length=200, null=True, blank=True)
 	
 	
