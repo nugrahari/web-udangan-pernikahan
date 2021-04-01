@@ -34,3 +34,34 @@ def index(request, nama):
         'status' : status,
     }
     return render(request, 'base.html', context)
+
+
+
+def list_grup(request):
+    tamu_undangan = TamuUndangan.objects.all()
+    grups = []
+    for data in tamu_undangan:
+
+        if data.keterangan not in grups:
+            grups.append(data.keterangan)
+
+
+    context = {
+        'title' : 'Beranda',
+        'SubJudul' : '',
+        'content'   : "",
+        'grups'     : grups
+        }
+    print(grups)
+    return render(request, 'list_grup.html', context)
+
+def list_of_grup(request, grup):
+
+
+    tamu_undangan = TamuUndangan.objects.filter(keterangan=grup)
+    context = {
+        
+        'tamu_undangan' : tamu_undangan,
+        
+    }
+    return render(request, 'list_of_grup.html', context)

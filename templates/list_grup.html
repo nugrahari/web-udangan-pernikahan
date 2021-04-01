@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>No</td>
+			<td>Grup</td>
+			<td>Get Nama</td>
+		</tr>
+		{% for grup in grups %}
+
+         <tr>
+         	<td>{{forloop.counter}}</td>
+            <td>{{grup}}</td>
+            <td><a href="/list/{{grup}}" target="blank">list</a></td>
+         </tr>                
+                    
+        {% endfor %}
+		
+	</table>
+</body>
+</html>

@@ -18,11 +18,13 @@ from django.conf.urls.static import static, serve
 
 from django.contrib import admin
 from django.urls import path
-from app_undangan.views import index
+from app_undangan.views import index, list_grup, list_of_grup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('undang/<nama>', index),
+    path('list/', list_grup),
+    path('list/<grup>', list_of_grup),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

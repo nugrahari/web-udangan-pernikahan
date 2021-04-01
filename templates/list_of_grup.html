@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>No</td>
+			<td>Nama</td>
+			<td>Link</td>
+		</tr>
+		{% for tamu in tamu_undangan %}
+
+         <tr>
+         	<td>{{forloop.counter}}</td>
+            <td>{{tamu.nama}}</td>
+            <td><a target="blank" href="/undang/{{tamu.nama}}">list</a></td>
+         </tr>                
+                    
+        {% endfor %}
+		
+	</table>
+</body>
+</html>
